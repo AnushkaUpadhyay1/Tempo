@@ -1,0 +1,84 @@
+.toast {
+  position: fixed;
+  z-index: 60;
+  left: 50%;
+  bottom: calc(var(--t-toast-offset, 0px) + var(--t-space-3) + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  width: min(28rem, calc(100% - 2 * var(--t-space-3)));
+  display: flex;
+  align-items: center;
+  gap: var(--t-space-3);
+  padding: var(--t-space-2) var(--t-space-2) var(--t-space-2) var(--t-space-4);
+  border-radius: var(--t-radius-pill);
+  background: var(--t-surface-inverse);
+  color: var(--t-text-inverse);
+  box-shadow: var(--t-elevation-3);
+  overflow: hidden;
+  animation: pop var(--t-motion-duration-slow) var(--t-motion-easing-spring);
+}
+.icon {
+  flex: none;
+}
+.message {
+  flex: 1;
+  min-width: 0;
+  font-weight: var(--t-font-weight-semibold);
+  font-size: var(--t-font-size-sm);
+  overflow-wrap: anywhere;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--t-space-1);
+  min-height: var(--t-size-target-min);
+  padding: 0 var(--t-space-4);
+  border: 0;
+  border-radius: var(--t-radius-pill);
+  background: var(--t-accent-fill);
+  color: var(--t-accent-on-fill);
+  font-weight: var(--t-font-weight-bold);
+  cursor: pointer;
+}
+.close {
+  display: grid;
+  place-items: center;
+  width: var(--t-size-target-min);
+  height: var(--t-size-target-min);
+  border: 0;
+  border-radius: var(--t-radius-pill);
+  background: transparent;
+  color: var(--t-text-inverse);
+  cursor: pointer;
+}
+.toast :focus-visible {
+  outline-color: var(--t-text-inverse);
+}
+.timer {
+  position: absolute;
+  left: var(--t-space-4);
+  right: var(--t-space-4);
+  bottom: 0;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--t-accent-fill);
+  transform-origin: left;
+  animation-name: drain;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes drain {
+  to {
+    transform: scaleX(0);
+  }
+}
+@keyframes pop {
+  from {
+    transform: translate(-50%, 1.5rem) scale(0.95);
+    opacity: 0;
+  }
+}

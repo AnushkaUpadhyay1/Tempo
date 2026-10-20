@@ -1,0 +1,30 @@
+.shell {
+  --t-toast-offset: calc(var(--t-size-target-lg) + 2.25rem);
+  min-height: 100dvh;
+  padding-bottom: calc(
+    var(--t-toast-offset) + var(--t-space-12) + env(safe-area-inset-bottom, 0px)
+  );
+}
+.main {
+  max-width: var(--t-size-content-max);
+  margin: 0 auto;
+  padding: calc(var(--t-space-5) + env(safe-area-inset-top, 0px))
+    max(var(--t-space-4), env(safe-area-inset-right, 0px)) 0
+    max(var(--t-space-4), env(safe-area-inset-left, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: var(--t-space-5);
+}
+.main:focus {
+  outline: none;
+}
+.quick {
+  display: flex;
+  flex-direction: column;
+  gap: var(--t-space-3);
+}
+.addRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: var(--t-space-2);
+}

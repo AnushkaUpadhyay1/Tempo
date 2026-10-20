@@ -1,0 +1,41 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px 3px 8px;
+  border-radius: var(--t-radius-pill);
+  font-size: var(--t-font-size-xs);
+  font-weight: var(--t-font-weight-semibold);
+  line-height: 1.3;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.success {
+  background: var(--t-status-success-bg);
+  color: var(--t-text-success);
+}
+.warning {
+  background: var(--t-status-warning-bg);
+  color: var(--t-text-warning);
+}
+.danger {
+  background: var(--t-status-danger-bg);
+  color: var(--t-text-danger);
+}
+.info {
+  background: var(--t-status-info-bg);
+  color: var(--t-text-info);
+}
+.neutral {
+  background: var(--t-surface-muted);
+  color: var(--t-text-secondary);
+}
+.accent {
+  background: var(--t-accent-soft);
+  color: var(--t-accent-text);
+}
+@media (forced-colors: active) {
+  .pill {
+    border: 1px solid CanvasText;
+  }
+}

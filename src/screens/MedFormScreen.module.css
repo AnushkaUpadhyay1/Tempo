@@ -1,0 +1,35 @@
+.quick {
+  display: flex;
+  flex-direction: column;
+  gap: var(--t-space-3);
+  padding: var(--t-space-4) var(--t-space-5);
+  border-radius: var(--t-radius-lg);
+  background:
+    radial-gradient(140% 120% at 100% 0%, var(--t-accent-soft), transparent 60%),
+    var(--t-surface-card);
+  border: 1px solid var(--t-border-subtle);
+}
+.quick > button {
+  align-self: flex-start;
+}
+.understood {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--t-space-1);
+}
+.understood:empty {
+  display: none;
+}
+.timeRow {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--t-space-2);
+}
+.timeRow > :first-child {
+  flex: 1;
+}
+.pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+}

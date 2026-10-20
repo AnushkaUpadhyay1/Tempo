@@ -1,0 +1,28 @@
+.wrap {
+  position: relative;
+  border-radius: var(--t-radius-lg);
+  overflow: hidden;
+}
+.hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--t-space-2);
+  padding-left: var(--t-space-5);
+  background: var(--t-surface-muted);
+  color: var(--t-text-secondary);
+  font-weight: var(--t-font-weight-bold);
+}
+.armed {
+  background: var(--t-accent-fill);
+  color: var(--t-accent-on-fill);
+}
+.row {
+  position: relative;
+  touch-action: pan-y;
+  transition: transform var(--t-motion-duration-base) var(--t-motion-easing-spring);
+}
+.dragging {
+  transition: none;
+}

@@ -1,0 +1,63 @@
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--t-space-5);
+  padding: var(--t-space-5);
+  border-radius: var(--t-radius-xl);
+  background:
+    radial-gradient(120% 140% at 0% 0%, var(--t-accent-soft), transparent 60%),
+    var(--t-surface-card);
+  border: 1px solid var(--t-border-subtle);
+}
+@media (max-width: 22rem) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.ringValue {
+  font-family: var(--t-font-family-display);
+  font-size: var(--t-font-size-3xl);
+  font-weight: var(--t-font-weight-black);
+  letter-spacing: -0.04em;
+}
+.ringOf {
+  font-size: var(--t-font-size-lg);
+  color: var(--t-text-secondary);
+}
+.ringLabel {
+  font-size: var(--t-font-size-xs);
+  color: var(--t-text-secondary);
+  font-weight: var(--t-font-weight-semibold);
+}
+.heroStats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--t-space-2);
+  min-width: 0;
+}
+.streak {
+  display: flex;
+  align-items: center;
+  gap: var(--t-space-2);
+  font-family: var(--t-font-family-display);
+  font-size: var(--t-font-size-xl);
+  font-weight: var(--t-font-weight-bold);
+  letter-spacing: -0.02em;
+}
+.streak svg {
+  color: var(--t-accent-text);
+}
+.next {
+  color: var(--t-text-secondary);
+  font-size: var(--t-font-size-sm);
+}
+.inlineLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--t-size-target-min);
+  padding: 0 var(--t-space-3);
+  font-weight: var(--t-font-weight-semibold);
+  color: var(--t-text-primary);
+}

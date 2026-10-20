@@ -1,0 +1,16 @@
+.icon {
+  flex: none;
+  --grow: calc(0.5 + var(--t-text-scale, 1) / 2);
+}
+.sm {
+  width: calc(var(--t-size-icon-sm) * var(--grow));
+  height: calc(var(--t-size-icon-sm) * var(--grow));
+}
+.md {
+  width: calc(var(--t-size-icon-md) * var(--grow));
+  height: calc(var(--t-size-icon-md) * var(--grow));
+}
+.lg {
+  width: calc(var(--t-size-icon-lg) * var(--grow));
+  height: calc(var(--t-size-icon-lg) * var(--grow));
+}

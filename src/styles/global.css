@@ -1,0 +1,105 @@
+@import '@fontsource-variable/bricolage-grotesque/wght.css';
+@import '@fontsource-variable/onest/wght.css';
+@import '@fontsource-variable/geist-mono/wght.css';
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--t-surface-page);
+  color: var(--t-text-primary);
+  font-family: var(--t-font-family-body);
+  font-size: var(--t-font-size-md);
+  line-height: var(--t-font-line-height-body);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'ss01', 'cv11';
+}
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+dl,
+dd,
+ol,
+ul {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--t-font-family-display);
+  line-height: var(--t-font-line-height-tight);
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+:focus-visible {
+  outline: var(--t-size-focus-width) solid var(--t-focus-ring);
+  outline-offset: var(--t-size-focus-offset);
+}
+::selection {
+  background: var(--t-accent-soft);
+}
+.t-num {
+  font-family: var(--t-font-family-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+.t-skip {
+  position: absolute;
+  left: var(--t-space-3);
+  top: var(--t-space-3);
+  z-index: 100;
+  padding: var(--t-space-3) var(--t-space-4);
+  border-radius: var(--t-radius-pill);
+  background: var(--t-accent-fill);
+  color: var(--t-accent-on-fill);
+  font-weight: var(--t-font-weight-semibold);
+  transform: translateY(-200%);
+}
+.t-skip:focus {
+  transform: none;
+}
+[data-reduced-motion='true'] *,
+[data-reduced-motion='true'] *::before,
+[data-reduced-motion='true'] *::after {
+  animation-duration: 0ms !important;
+  transition-duration: 0ms !important;
+  scroll-behavior: auto !important;
+}
+.t-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

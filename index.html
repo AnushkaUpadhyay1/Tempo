@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Tempo · meds and appointments, on beat</title>
+    <meta
+      name="description"
+      content="Tempo is a fast, modern tracker for medicines and appointments: swipe to log a dose, keep your streak, and share your week. Design concept with demo data."
+    />
+    <meta name="theme-color" content="#0C0D12" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F5F5F7" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tempo" />
+    <meta property="og:description" content="Meds and appointments, on beat. A design concept." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Apply saved appearance before first paint so there is no flash of the wrong theme.
+      (function () {
+        try {
+          var s = JSON.parse(localStorage.getItem('tempo.settings.v1') || 'null') || {};
+          var d = document.documentElement;
+          var pref = s.theme || 'system';
+          var dark =
+            pref === 'dark' ||
+            (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          d.setAttribute('data-theme', dark ? 'dark' : 'light');
+          d.setAttribute('data-accent', s.accent || 'tangerine');
+          if (s.textScale) d.style.setProperty('--t-text-scale', String(s.textScale / 100));
+          if (typeof s.reducedMotion === 'boolean')
+            d.setAttribute('data-reduced-motion', String(s.reducedMotion));
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Tempo needs JavaScript turned on.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

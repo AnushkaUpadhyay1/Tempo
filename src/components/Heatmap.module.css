@@ -1,0 +1,36 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+}
+.cell {
+  aspect-ratio: 1;
+  max-width: 100%;
+  border-radius: 6px;
+  background: var(--t-surface-muted);
+  border: 1px solid var(--t-border-subtle);
+}
+.cell[data-level='1'] {
+  background: color-mix(in srgb, var(--t-accent-fill) 25%, var(--t-surface-muted));
+}
+.cell[data-level='2'] {
+  background: color-mix(in srgb, var(--t-accent-fill) 50%, var(--t-surface-muted));
+}
+.cell[data-level='3'] {
+  background: color-mix(in srgb, var(--t-accent-fill) 75%, var(--t-surface-muted));
+}
+.cell[data-level='4'] {
+  background: var(--t-accent-fill);
+  border-color: var(--t-accent-fill);
+}
+.cell[data-today] {
+  outline: 2px solid var(--t-text-primary);
+  outline-offset: 1px;
+}
+@media (forced-colors: active) {
+  .cell[data-level='4'] {
+    background: Highlight;
+  }
+}

@@ -1,0 +1,35 @@
+.track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--t-radius-pill);
+  background: var(--t-surface-muted);
+  border: 1px solid var(--t-border-subtle);
+}
+.option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--t-space-1);
+  min-height: var(--t-size-target-min);
+  padding: var(--t-space-1) var(--t-space-2);
+  border: 0;
+  border-radius: var(--t-radius-pill);
+  background: transparent;
+  color: var(--t-text-secondary);
+  font-weight: var(--t-font-weight-semibold);
+  font-size: var(--t-font-size-sm);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.option:hover {
+  color: var(--t-text-primary);
+}
+.on {
+  background: var(--t-surface-card);
+  color: var(--t-text-primary);
+  box-shadow: var(--t-elevation-1);
+  outline: 1px solid var(--t-border-strong);
+}

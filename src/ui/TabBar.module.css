@@ -1,0 +1,102 @@
+.bar {
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  bottom: calc(var(--t-space-3) + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  width: min(30rem, calc(100% - 2 * var(--t-space-3)));
+  padding: 6px;
+  border: 1px solid var(--t-border-subtle);
+  border-radius: var(--t-radius-xl);
+  background: var(--t-overlay-glass);
+  backdrop-filter: saturate(1.6) blur(18px);
+  -webkit-backdrop-filter: saturate(1.6) blur(18px);
+  box-shadow: var(--t-elevation-2);
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) auto repeat(2, minmax(0, 1fr));
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--t-size-target-lg);
+  justify-content: center;
+  border-radius: var(--t-radius-lg);
+  color: var(--t-text-secondary);
+  text-decoration: none;
+  font-size: var(--t-font-size-xs);
+  font-weight: var(--t-font-weight-semibold);
+}
+.tab:hover {
+  color: var(--t-text-primary);
+}
+.active {
+  color: var(--t-text-primary);
+}
+.active .iconWrap {
+  background: var(--t-accent-soft);
+  color: var(--t-accent-text);
+}
+.iconWrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 1.75rem;
+  border-radius: var(--t-radius-pill);
+  transition: background-color var(--t-motion-duration-base) var(--t-motion-easing-standard);
+}
+.label {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.badge {
+  position: absolute;
+  top: -5px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: var(--t-radius-pill);
+  background: var(--t-accent-fill);
+  color: var(--t-accent-on-fill);
+  font-family: var(--t-font-family-mono);
+  font-size: 11px;
+  font-weight: var(--t-font-weight-bold);
+  line-height: 18px;
+  text-align: center;
+}
+.actionCell {
+  padding: 0 var(--t-space-2);
+}
+.action {
+  display: grid;
+  place-items: center;
+  width: var(--t-size-target-lg);
+  height: var(--t-size-target-lg);
+  border: 0;
+  border-radius: var(--t-radius-lg);
+  background: var(--t-accent-fill);
+  color: var(--t-accent-on-fill);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--t-accent-fill) 45%, transparent);
+  cursor: pointer;
+  transition: transform var(--t-motion-duration-fast) var(--t-motion-easing-spring);
+}
+.action:hover {
+  background: var(--t-accent-fill-hover);
+}
+.action:active {
+  transform: scale(0.94);
+}
+@media (forced-colors: active) {
+  .active {
+    outline: 2px solid Highlight;
+  }
+}

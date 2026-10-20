@@ -1,0 +1,100 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  gap: var(--t-space-3);
+  padding: 0;
+  list-style: none;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--t-space-3);
+  padding: var(--t-space-4);
+  border: 1px solid var(--t-border-subtle);
+  border-radius: var(--t-radius-lg);
+  background: var(--t-surface-card);
+  transition:
+    transform var(--t-motion-duration-fast) var(--t-motion-easing-standard),
+    border-color var(--t-motion-duration-fast) var(--t-motion-easing-standard);
+}
+.card:hover {
+  border-color: var(--t-border-strong);
+  transform: translateY(-1px);
+}
+.card:has(.link:focus-visible) {
+  outline: var(--t-size-focus-width) solid var(--t-focus-ring);
+  outline-offset: var(--t-size-focus-offset);
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--t-space-2);
+}
+.name {
+  font-size: var(--t-font-size-lg);
+  font-weight: var(--t-font-weight-bold);
+}
+/* The link covers the card so the whole card is one large target. */
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.link:focus-visible {
+  outline: none;
+}
+.meta {
+  font-size: var(--t-font-size-sm);
+  color: var(--t-text-secondary);
+}
+.times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--t-space-1);
+  padding: 0;
+  list-style: none;
+}
+.time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--t-radius-pill);
+  background: var(--t-surface-muted);
+  font-size: var(--t-font-size-xs);
+}
+.supply {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.supplyText {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--t-space-2);
+  font-size: var(--t-font-size-xs);
+  color: var(--t-text-secondary);
+}
+.bar {
+  height: 6px;
+  border-radius: var(--t-radius-pill);
+  background: var(--t-surface-muted);
+  overflow: hidden;
+}
+.fill,
+.fillLow {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--t-accent-fill);
+}
+.fillLow {
+  background: var(--t-text-warning);
+}

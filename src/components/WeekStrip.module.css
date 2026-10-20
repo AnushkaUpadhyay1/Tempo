@@ -1,0 +1,49 @@
+.strip {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 2px;
+  padding: 0;
+  list-style: none;
+}
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.label {
+  font-size: var(--t-font-size-xs);
+  color: var(--t-text-tertiary);
+  font-weight: var(--t-font-weight-semibold);
+}
+/* A conic ring: the filled arc is the share of doses logged. */
+.dot {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(closest-side, var(--t-surface-page) 76%, transparent 78%),
+    conic-gradient(var(--t-accent-fill) var(--p), var(--t-surface-muted) 0);
+  font-family: var(--t-font-family-mono);
+  font-size: var(--t-font-size-xs);
+  font-variant-numeric: tabular-nums;
+}
+.full {
+  background: var(--t-accent-fill);
+  color: var(--t-accent-on-fill);
+  font-weight: var(--t-font-weight-bold);
+}
+.today .label {
+  color: var(--t-text-primary);
+}
+.today .dot {
+  outline: 2px solid var(--t-text-primary);
+  outline-offset: 2px;
+}
+@media (forced-colors: active) {
+  .full {
+    background: Highlight;
+  }
+}
